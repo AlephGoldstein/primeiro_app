@@ -1,6 +1,6 @@
-function MostraNome({pessoa}){
+function MostraNome({pessoa,idade}){
     return (
-      <span>Ohayo {pessoa}</span>
+      <span>Ohayo {pessoa}-chan uwu {idade} </span>
     );
 }
 export default MostraNome

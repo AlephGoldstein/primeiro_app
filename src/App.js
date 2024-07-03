@@ -41,9 +41,9 @@ return(
     <form onSubmit={handleSubmit}>
       <label>
         Nome:
-        <input type="text" value={nome} onChange={handleChange} />
+        <input type="text" value={nome} onChange={handleChange} class="form-control" />
       </label>
-      <input type="submit" value="Enviar" />
+      <input type="submit" value="Enviar" class="btn btn-primary" />
     </form>
   </div>
 )

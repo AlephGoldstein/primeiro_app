@@ -52,56 +52,33 @@ return(
 export default MeuForms;
 */
 function App(){
-  const [nome, setNome] = useState(" ");
-  const [email, setEmail] = useState(" ");
-  const [idade, setIdade] = useState(" ");
-
-const handleRegister = (e) =>{
-  e.preventDefault();
-  console.log({nome},{email},{idade})
-  };
-return(
-
-  <div className="container container-light bg-light d-flex justify-content-between">
-
-    <div className="col-md-6">
-
+  const [input, setInput] = useState(" ");
+  const[tarefas, setTarefas] = useState([
+      "Pagar as Contas",
+      "Estudar React JS",
+    ]);
+  function handleRegister(e){
+    e.preventDefault();
+    setTarefas([...tarefas, input]);
+    setInput(" ");
+  }
+  return(
+    <div className="container container-light bg-light d-flex justify-content-between">
+      <h1 className="h1">Meu primeiro App</h1>
       <form onSubmit={handleRegister}>
-
-        <div className="mb-3">
-
-          <label for="exampleInputEmail1" className="form-label">Nome</label>
-
-          <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={nome} onChange={(e) => setNome(e.target.value)} />
-
-        </div>
-
-        <div className="mb-3">
-          <label for="exampleInputEmail1" className="form-label">Email</label>
-          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={email} onChange={(e) => setEmail(e.target.value)} />
-
-        </div>
-
-        <div className="mb-3">
-          <label for="exampleInputEmail1" className="form-label">Idade</label>
-          <input type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={idade} onChange={(e) => setIdade(e.target.value)} />
-
-        </div>
-
-        <button type="submit" className="btn btn-primary">Enviar</button>
-        
-        <div>
-
-          <h1>{nome}</h1>
-
-          <h1>{email}</h1>
-
-          <h1>{idade}</h1>
-        </div>
-
+        <input
+         type="text" value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="form-control"
+        />
+        <button type="submit" className="btn btn-primary">Adicionar</button>
       </form>
-      </div>
-      </div>
-)
+      <ul>
+  {tarefas.map((tarefa,index) => (
+    <li key={index}>{tarefa}</li>
+  ))}
+</ul>
+    </div>
+  );
 }
 export default App

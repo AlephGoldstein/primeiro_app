@@ -73,9 +73,9 @@ function App(){
         />
         <button type="submit" className="btn btn-primary">Adicionar</button>
       </form>
-      <ul>
+      <ul className="list-group">
   {tarefas.map((tarefa,index) => (
-    <li key={index}>{tarefa}</li>
+    <li className="list-group-item bg-primary text-light" key={index}>{tarefa}</li>
   ))}
 </ul>
     </div>

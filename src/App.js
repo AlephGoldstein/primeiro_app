@@ -27,6 +27,7 @@ function App() {
 
 export default App;
 */
+/*
 function MeuForms(){
 const[nome,setNome] = useState(" ");
 const handleChange = (event) => {
@@ -49,3 +50,4 @@ return(
 )
 }
 export default MeuForms;
+*/

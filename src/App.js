@@ -1,5 +1,6 @@
-import MostraNome from "./components/MostraNome"
 import { useState } from "react";
+/*
+import MostraNome from "./components/MostraNome"
 function App() {
   const [pessoa, setPessoa] = useState("Professor de TI")
   function handleChangeName(nome){
@@ -25,4 +26,26 @@ function App() {
 }
 
 export default App;
-
+*/
+function MeuForms(){
+const[nome,setNome] = useState(" ");
+const handleChange = (event) => {
+  setNome(event.target.value)
+};
+const handleSubmit = (event) => {
+  event.preventDefault();
+  alert(`Olá ${nome}`)
+}
+return(
+  <div>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Nome:
+        <input type="text" value={nome} onChange={handleChange} />
+      </label>
+      <input type="submit" value="Enviar" />
+    </form>
+  </div>
+)
+}
+export default MeuForms;
